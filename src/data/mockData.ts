@@ -22,11 +22,9 @@ export const products: Product[] = [
     category: 'Kaos',
     price: 199000,
     memberPrice: 179000,
-    image: 'https://images.unsplash.com/photo-1666358085449-a10a39f33942?w=800',
+    image: 'src/assets/comingsoon-2.png',
     images: [
-      'https://images.unsplash.com/photo-1666358085449-a10a39f33942?w=800',
-      'https://images.unsplash.com/photo-1576790807856-b9205fb5703f?w=800',
-      'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=800'
+      'src/assets/comingsoon-1.png  ',
     ],
     description: 'Kaos premium dengan desain minimalis khas Febsin. Nyaman dipakai sehari-hari dengan bahan cotton combed 30s.',
     material: 'Cotton Combed 30s, 100% Katun',
@@ -42,10 +40,9 @@ export const products: Product[] = [
     category: 'Hoodie',
     price: 399000,
     memberPrice: 349000,
-    image: 'https://images.unsplash.com/photo-1635715226585-004fef5a55a4?w=800',
+    image: 'src/assets/comingsoon-1.png',
     images: [
-      'https://images.unsplash.com/photo-1635715226585-004fef5a55a4?w=800',
-      'https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=800'
+      'src/assets/comingsoon-2.png'
     ],
     description: 'Hoodie premium dengan bahan fleece tebal dan halus. Perfect untuk gaya streetwear kamu.',
     material: 'Fleece Premium, 80% Cotton 20% Polyester',
@@ -61,10 +58,9 @@ export const products: Product[] = [
     category: 'Kemeja',
     price: 279000,
     memberPrice: 249000,
-    image: 'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=800',
+    image: 'src/assets/comingsoon-2.png',
     images: [
-      'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=800',
-      'https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=800'
+      //'isi file gambar di sini'
     ],
     description: 'Kemeja flanel dengan motif kotak-kotak klasik. Material lembut dan hangat.',
     material: 'Flannel Premium',
@@ -80,10 +76,9 @@ export const products: Product[] = [
     category: 'Aksesoris',
     price: 129000,
     memberPrice: 99000,
-    image: 'https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=800',
+    image: 'src/assets/comingsoon-3.png',
     images: [
-      'https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=800',
-      'https://images.unsplash.com/photo-1575428652377-a2d80e2277fc?w=800'
+      // 'isi gambar di sini'
     ],
     description: 'Topi baseball cap dengan logo Febsin. Material berkualitas tinggi.',
     material: 'Cotton Twill',
@@ -99,10 +94,9 @@ export const products: Product[] = [
     category: 'Kaos',
     price: 219000,
     memberPrice: 189000,
-    image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=800',
+    image: 'src/assets/comingsoon-3.png',
     images: [
-      'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=800',
-      'https://images.unsplash.com/photo-1622445275576-721325763afe?w=800'
+      'src/assets/comingsoon-2.png',
     ],
     description: 'Kaos oversized dengan cutting modern. Cocok untuk streetwear look.',
     material: 'Cotton Combed 24s',
@@ -118,10 +112,9 @@ export const products: Product[] = [
     category: 'Hoodie',
     price: 549000,
     memberPrice: 499000,
-    image: 'https://images.unsplash.com/photo-1551028719-00167b16eac5?w=800',
+    image: 'src/assets/comingsoon-1.png',
     images: [
-      'https://images.unsplash.com/photo-1551028719-00167b16eac5?w=800',
-      'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=800'
+      //'isi gambar di sini'
     ],
     description: 'Bomber jacket edisi terbatas dengan detail premium. Limited stock!',
     material: 'Polyester Premium dengan Lining',
@@ -137,9 +130,9 @@ export const products: Product[] = [
     category: 'Kemeja',
     price: 249000,
     memberPrice: 219000,
-    image: 'https://images.unsplash.com/photo-1586363104862-3a5e2ab60d99?w=800',
+    image: 'src/assets/comingsoon-1.png',
     images: [
-      'https://images.unsplash.com/photo-1586363104862-3a5e2ab60d99?w=800'
+      //'isi gambar di sini'
     ],
     description: 'Polo shirt casual dengan material breathable. Cocok untuk acara semi-formal.',
     material: 'Lacoste Cotton',
@@ -155,9 +148,9 @@ export const products: Product[] = [
     category: 'Aksesoris',
     price: 149000,
     memberPrice: 129000,
-    image: 'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=800',
+    image: 'src/assets/comingsoon-3.png',
     images: [
-      'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=800'
+      //'isi gambar di sini'
     ],
     description: 'Tote bag canvas dengan logo Febsin. Praktis dan stylish.',
     material: 'Canvas Premium',
