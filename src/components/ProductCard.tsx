@@ -8,6 +8,7 @@ import { Badge } from './ui/badge';
 import { motion } from 'motion/react';
 import { toast } from 'sonner';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import ProductRating from './ProductRating';
 
 interface ProductCardProps {
   product: Product;
@@ -112,6 +113,19 @@ export default function ProductCard({ product }: ProductCardProps) {
           <h3 className="mb-2 group-hover:text-red-700 dark:group-hover:text-red-500 transition-colors">
             {product.name}
           </h3>
+          
+          {/* Rating */}
+          {product.rating && product.rating > 0 && (
+            <div className="mb-2">
+              <ProductRating
+                rating={product.rating}
+                reviewCount={product.reviewCount}
+                size="sm"
+                showCount={false}
+              />
+            </div>
+          )}
+          
           <div className="flex items-center gap-2">
             <span className="text-red-700 dark:text-red-500">
               Rp {displayPrice.toLocaleString('id-ID')}

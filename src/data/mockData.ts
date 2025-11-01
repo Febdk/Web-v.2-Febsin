@@ -1,3 +1,15 @@
+// ========================================
+// 📸 IMPORT IMAGES FROM LOCAL FOLDER
+// ========================================
+// Contoh cara import gambar dari folder lokal:
+// import toteBag1 from '../assets/products/tote-bag-1.jpg';
+// import toteBag2 from '../assets/products/tote-bag-2.jpg';
+// import comingSoon1 from '../assets/comingsoon-1.svg';
+// import comingSoon2 from '../assets/comingsoon-2.svg';
+// import comingSoon3 from '../assets/comingsoon-3.svg';
+
+// Uncomment baris di atas setelah Anda taruh foto di folder /assets/
+
 export interface Product {
   id: string;
   name: string;
@@ -13,6 +25,27 @@ export interface Product {
   gender: "Pria" | "Wanita" | "Unisex";
   stock: number;
   featured: boolean;
+  rating?: number; // Average rating (0-5)
+  reviewCount?: number; // Total number of reviews
+}
+
+// ========================================
+// 💬 PRODUCT REVIEW INTERFACE
+// ========================================
+export interface ProductReview {
+  id: string;
+  productId: string;
+  userId: string;
+  userName: string;
+  userAvatar: string;
+  rating: number; // 1-5 stars
+  title: string;
+  comment: string;
+  date: string;
+  size?: string; // Size yang dibeli
+  verified: boolean; // Verified purchase?
+  helpful: number; // Helpful votes count
+  images?: string[]; // Review images (optional)
 }
 
 export const products: Product[] = [
@@ -22,10 +55,11 @@ export const products: Product[] = [
     category: "Kaos",
     price: 199000,
     memberPrice: 179000,
-    image: "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=800",
+    image: "https://images.unsplash.com/photo-1666358085449-a10a39f33942?w=800",
     images: [
-      "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=800",
-      "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=800",
+      "https://images.unsplash.com/photo-1666358085449-a10a39f33942?w=800",
+      "https://images.unsplash.com/photo-1576790807856-b9205fb5703f?w=800",
+      "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=800",
     ],
     description:
       "Kaos premium dengan desain minimalis khas Febsin. Nyaman dipakai sehari-hari dengan bahan cotton combed 30s.",
@@ -35,6 +69,8 @@ export const products: Product[] = [
     gender: "Unisex",
     stock: 50,
     featured: true,
+    rating: 4.8,
+    reviewCount: 24,
   },
   {
     id: "2",
@@ -42,11 +78,10 @@ export const products: Product[] = [
     category: "Hoodie",
     price: 399000,
     memberPrice: 349000,
-    image: "https://images.unsplash.com/photo-1666358085449-a10a39f33942?w=800",
+    image: "https://images.unsplash.com/photo-1635715226585-004fef5a55a4?w=800",
     images: [
-      "https://images.unsplash.com/photo-1666358085449-a10a39f33942?w=800",
-      "https://images.unsplash.com/photo-1576790807856-b9205fb5703f?w=800",
-      "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=800",
+      "https://images.unsplash.com/photo-1635715226585-004fef5a55a4?w=800",
+      "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=800",
     ],
     description:
       "Hoodie premium dengan bahan fleece tebal dan halus. Perfect untuk gaya streetwear kamu.",
@@ -56,6 +91,8 @@ export const products: Product[] = [
     gender: "Unisex",
     stock: 30,
     featured: true,
+    rating: 4.9,
+    reviewCount: 18,
   },
   {
     id: "3",
@@ -63,10 +100,10 @@ export const products: Product[] = [
     category: "Kemeja",
     price: 279000,
     memberPrice: 249000,
-    image: "https://images.unsplash.com/photo-1635715226585-004fef5a55a4?w=800",
+    image: "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=800",
     images: [
-      "https://images.unsplash.com/photo-1635715226585-004fef5a55a4?w=800",
-      "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=800",
+      "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=800",
+      "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=800",
     ],
     description:
       "Kemeja flanel dengan motif kotak-kotak klasik. Material lembut dan hangat.",
@@ -323,5 +360,120 @@ export const mockOrders: Order[] = [
       },
     ],
     tracking: "JP0987654321",
+  },
+];
+
+// ========================================
+// 💬 PRODUCT REVIEWS DATA
+// ========================================
+
+export const productReviews: ProductReview[] = [
+  // Reviews untuk Product ID '1' - Febsin Classic Black Tee
+  {
+    id: "rev-1",
+    productId: "1",
+    userId: "user-1",
+    userName: "Dimas Prasetyo",
+    userAvatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=dimas",
+    rating: 5,
+    title: "Kualitas Premium, Harga Terjangkau!",
+    comment:
+      "Kaosnya bener-bener premium! Bahan adem, jahitan rapi, dan cutting-nya pas di badan. Udah 3x cuci masih bagus, ga luntur sama sekali. Worth it banget dengan harganya. Recommended!",
+    date: "28 Okt 2025",
+    size: "L",
+    verified: true,
+    helpful: 15,
+  },
+  {
+    id: "rev-2",
+    productId: "1",
+    userId: "user-2",
+    userName: "Sarah Amelia",
+    userAvatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=sarah",
+    rating: 5,
+    title: "Best Purchase!",
+    comment:
+      "Ini kaos terbaik yang pernah aku beli! Bahannya super soft, ga panas, dan modelnya minimalis jadi gampang dipadupadankan. Ukurannya juga sesuai size chart. Bakal beli lagi warna lain!",
+    date: "25 Okt 2025",
+    size: "M",
+    verified: true,
+    helpful: 12,
+  },
+  {
+    id: "rev-3",
+    productId: "1",
+    userId: "user-3",
+    userName: "Rian Firmansyah",
+    userAvatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=rian",
+    rating: 4,
+    title: "Bagus, Tapi Agak Kekecilan",
+    comment:
+      "Kualitas bahan oke banget, ga nyangka brand lokal bisa sekualitas ini. Cuma untuk yang body agak besar disarankan ambil 1 size lebih besar. Aku biasa L, tapi ini pas banget, prefer lebih longgar.",
+    date: "22 Okt 2025",
+    size: "L",
+    verified: true,
+    helpful: 8,
+  },
+  {
+    id: "rev-4",
+    productId: "1",
+    userId: "user-4",
+    userName: "Maya Putri",
+    userAvatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=maya",
+    rating: 5,
+    title: "Love it! Bakal Order Lagi",
+    comment:
+      "Packaging rapi, pengiriman cepat, dan produknya exceed expectations! Bahannya tebel tapi breathable, jadi nyaman dipake seharian. Design minimalisnya juga timeless. 10/10!",
+    date: "20 Okt 2025",
+    size: "S",
+    verified: true,
+    helpful: 10,
+  },
+
+  // Reviews untuk Product ID '2' - Urban Hoodie Premium
+  {
+    id: "rev-5",
+    productId: "2",
+    userId: "user-5",
+    userName: "Aldi Nugroho",
+    userAvatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=aldi",
+    rating: 5,
+    title: "Hoodie Terbaik yang Pernah Aku Punya!",
+    comment:
+      "Serius ini hoodie paling worth it! Bahan fleece-nya tebel banget tapi ga bikin gerah. Hood-nya pas, tali serut berkualitas, dan zipper-nya smooth. Pokoknya premium dari ujung ke ujung. Harga segini dapet kualitas begini? Take my money!",
+    date: "29 Okt 2025",
+    size: "L",
+    verified: true,
+    helpful: 20,
+  },
+  {
+    id: "rev-6",
+    productId: "2",
+    userId: "user-6",
+    userName: "Indah Sari",
+    userAvatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=indah",
+    rating: 5,
+    title: "Perfect for Street Style!",
+    comment:
+      "Hoodie ini bener-bener cocok buat street style! Fit-nya oversized tapi ga kebesaran, warna hitamnya pekat ga pudar, dan yang paling penting hangat tapi ga gerah. Kantongnya juga luas. Love this!",
+    date: "26 Okt 2025",
+    size: "M",
+    verified: true,
+    helpful: 14,
+  },
+  {
+    id: "rev-7",
+    productId: "2",
+    userId: "user-7",
+    userName: "Fahmi Rahman",
+    userAvatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=fahmi",
+    rating: 4,
+    title: "Kualitas Oke, Harga Agak Mahal",
+    comment:
+      "Kualitas hoodie-nya memang ga diragukan lagi, tapi untuk harga 399k agak pricey menurut gue. Tapi ya gapapa sih karena emang kualitasnya premium banget. Material dan jahitan solid.",
+    date: "23 Okt 2025",
+    size: "XL",
+    verified: true,
+    helpful: 6,
   },
 ];
